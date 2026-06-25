@@ -1,26 +1,27 @@
-# Project Empty Template
+# Gerador de Arquivos
 
-Este é um repositório de exemplo para você começar a desenvolver a questão, leia com atenção os requisitos do enunciado da questão na plataforma e seguia as boas práticas sobre como utilizar este repositório.
+Aplicação desenvolvida em C# para processamento, geração de arquivos de texto baseados em regras de negócio e validação de integridade de dados.
 
+## Tecnologias Utilizadas
 
-## Readme do Repositório
+- **Linguagem:** C#
+- **Framework:** .NET Framework 4.8
+- **Testes:** NUnit
+- **Processamento de JSON:** Newtonsoft.Json
 
-- Deve conter o título do projeto
-- Uma descrição sobre o projeto em frase
-- Deve conter uma lista com linguagem, framework e/ou tecnologias usadas
-- Como instalar e usar o projeto (instruções)
-- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
-- Se está usando github pessoal, referencie que é um challenge by coodesh:  
+## Como Instalar e Usar
 
->  This is a challenge by [Coodesh](https://coodesh.com/)
+### Pré-requisitos
+Certifique-se de possuir o .NET Framework 4.8 instalado em sua máquina. Caso não tenha, faça o download no site oficial:
+[Download .NET Framework 4.8 Developer Pack](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer)
 
-## Finalização e Instruções para a Apresentação
+### Compilação
+Na raiz do projeto, utilize o terminal para compilar a solução:
 
-1. Adicione o link do repositório com a sua solução na questão na plataforma
-2. Verifique se o Readme está bom e faça o commit final em seu repositório;
-3. Envie e aguarde as instruções para seguir. Caso o teste tenha apresentação de vídeo, dentro da tela de entrega será possível gravar após adicionar o link do repositório. Sucesso e boa sorte. =)
-
-
-## Suporte
-
-Para tirar dúvidas sobre o processo envie uma mensagem diretamente a um especialista no chat da plataforma. 
+Limpeza do ambiente , Build e Execução:
+```bash
+dotnet clean
+dotnet build
+.\ConsoleApp1\bin\Debug\ConsoleApp1.exe test
+.\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+```

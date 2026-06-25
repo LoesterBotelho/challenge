@@ -20,7 +20,15 @@ namespace GeradorTxt
 
     public class ItemDocumento
     {
+        public string NumeroItem { get; set; } // Novo: Requisito Leiaute 2
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
+        public List<CategoriaItem> Categorias { get; set; } = new List<CategoriaItem>(); // Novo
+    }
+
+    public class CategoriaItem
+    {
+        public string NumeroCategoria { get; set; }
+        public string DescricaoCategoria { get; set; }
     }
 }

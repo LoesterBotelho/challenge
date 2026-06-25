@@ -36,6 +36,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>.\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>.\nunit.framework.dll</HintPath>
+    </Reference>    
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GeradorTxt\GeradorArquivoBase.cs" />
     <Compile Include="GeradorTxt\JsonRepository.cs" />
+    <Compile Include="GeradorTxt\ContadorLinhas.cs" />
+    <Compile Include="GeradorTxt\GeradorLayoutV1.cs" />
+    <Compile Include="GeradorTxt\GeradorLayoutV2.cs" />
+    <Compile Include="GeradorTxt\TesteGerador.cs" />
     <Compile Include="GeradorTxt\MainConsole.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -59,25 +59,17 @@ namespace GeradorTxt
                         break;
 
                     case "3":
-                        Console.Write("Gerar arquivo");
-                        try
-                        {
-                            var gerador = new GeradorArquivoBase();
+                        Console.Write("Informe a versão do leiaute (1 ou 2): ");
+                        var versao = Console.ReadLine();
+                        
+                        GeradorArquivoBase gerador = (versao == "2") ? new GeradorLayoutV2() : (GeradorArquivoBase)new GeradorLayoutV1();
+                        
+                        var dados = JsonRepository.LoadEmpresas(_jsonPath);
+                        var fileName = $"saida_leiaute_v{versao}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                        var fullPath = Path.Combine(_outputDir, fileName);
 
-                            var dados = JsonRepository.LoadEmpresas(_jsonPath);
-
-                            var fileName = $"saida_leiaute_versão 01_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
-
-                            var fullPath = Path.Combine(_outputDir, fileName);
-
-                            gerador.Gerar(dados, fullPath);
-
-                            Console.WriteLine("Arquivo gerado em: " + fullPath);
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Erro ao gerar arquivo: " + ex.Message);
-                        }
+                        gerador.Gerar(dados, fullPath);
+                        Console.WriteLine("Arquivo gerado em: " + fullPath);
                         break;
 
                     case "0":

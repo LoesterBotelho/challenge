@@ -3,33 +3,35 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Linq;
 
 namespace GeradorTxt
 {
-    /// <summary>
-    /// Implementa a geração do Leiaute 1.
-    /// IMPORTANTE: métodos NÃO marcados como virtual de propósito.
-    /// O candidato deve decidir onde permitir override para suportar versões futuras.
-    /// </summary>
-    public class GeradorArquivoBase
+    public abstract class GeradorArquivoBase
     {
-        public void Gerar(List<Empresa> empresas, string outputPath)
-        {
-            var sb = new StringBuilder();
-            foreach (var emp in empresas)
-            {
-                EscreverTipo00(sb, emp);
-                foreach (var doc in emp.Documentos)
-                {
-                    EscreverTipo01(sb, doc);
-                    foreach (var item in doc.Itens)
-                    {
-                        EscreverTipo02(sb, item);
-                    }
-                }
-            }
-            File.WriteAllText(outputPath, sb.ToString(), Encoding.UTF8);
+        protected ContadorLinhas Contador = new ContadorLinhas();
+        
+        protected void ValidarSoma(Documento doc) {                
+            if (Math.Abs(doc.Itens.Sum(i => i.Valor) - doc.Valor) > 0.01m)
+                throw new Exception($"Erro: Soma inconsistente no documento {doc.Numero}");
         }
+
+        protected void Incrementar(string tipo) {
+            if (tipo == "00") Contador.Tipo00++;
+            else if (tipo == "01") Contador.Tipo01++;
+            else if (tipo == "02") Contador.Tipo02++;
+            else if (tipo == "03") Contador.Tipo03++;
+        }
+
+        protected void EscreverRodape(StringBuilder sb) {
+            sb.AppendLine($"09|00|{Contador.Tipo00}");
+            sb.AppendLine($"09|01|{Contador.Tipo01}");
+            sb.AppendLine($"09|02|{Contador.Tipo02}");
+            sb.AppendLine($"09|03|{Contador.Tipo03}");
+            sb.AppendLine($"99|{Contador.TotalLinhas}");
+        }
+
+        public abstract void Gerar(List<Empresa> empresas, string outputPath);
 
         protected string ToMoney(decimal val)
         {
@@ -62,5 +64,13 @@ namespace GeradorTxt
               .Append(item.Descricao).Append("|")
               .Append(ToMoney(item.Valor)).AppendLine();
         }
+
+        protected void EscreverTipo03(StringBuilder sb, CategoriaItem cat) // Corrigido de Categoria para CategoriaItem
+        {
+            // 03|NUMEROCATEGORIA|DESCRICAOCATEGORIA
+            sb.Append("03").Append("|")
+            .Append(cat.NumeroCategoria).Append("|")
+            .Append(cat.DescricaoCategoria).AppendLine();
+        }    
     }
 }

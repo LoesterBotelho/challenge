@@ -7,3 +7,13 @@ C:\Users\fernando.gevard\Downloads\AvaliacaoDotnet\Projeto\AvaliacaoDotnet\Conso
 C:\Users\fernando.gevard\Downloads\AvaliacaoDotnet\Projeto\AvaliacaoDotnet\ConsoleApp1\obj\Debug\AvaliacaoDotnet.csproj.CopyComplete
 C:\Users\fernando.gevard\Downloads\AvaliacaoDotnet\Projeto\AvaliacaoDotnet\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\fernando.gevard\Downloads\AvaliacaoDotnet\Projeto\AvaliacaoDotnet\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+D:\challenge\ConsoleApp1\obj\Debug\AvaliacaoDotnet.csproj.AssemblyReference.cache
+D:\challenge\ConsoleApp1\obj\Debug\AvaliacaoDotnet.csproj.CoreCompileInputs.cache
+D:\challenge\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\challenge\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\challenge\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\challenge\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
+D:\challenge\ConsoleApp1\bin\Debug\nunit.framework.dll
+D:\challenge\ConsoleApp1\obj\Debug\Avaliaca.6893F418.Up2Date
+D:\challenge\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\challenge\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
